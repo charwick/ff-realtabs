@@ -1,0 +1,102 @@
+/* REAL TABS IN FIREFOX
+   Intended to be used with the Firefox Colors plugin (https://addons.mozilla.org/en-US/firefox/addon/firefox-color/)
+   and this theme (https://color.firefox.com/?theme=XQAAAAIPAQAAAAAAAABBKYhm849SCia2CaaEGccwS-xMDPsquqWmWr6U_-J9Sk2zluBv0zSwMyKaAShHBfVaSjHe4S-QTZGGSWTDW3GJBaw52IuYFpk7GR12YCt7svbegS0W-lRKiZhfzG14OaRI3_gMy_gA0MF_nsUePY6mp_9pQVs8-Tr3k8GTtrj4zQB4czyVQlUKovwZ9JwdJMhwgAZzwiY6Y1j9h6cFOtjG8ahrCjP7213g)
+   But of course the colors can be modified.
+   If you find bugs or want to suggest improvements, open an issue at https://github.com/charwick/ff-realtabs
+
+   1. Navigate to about:config
+   2. Search for the toolkit.legacyUserProfileCustomizations.stylesheets preference and set it to True
+   3. Create a folder called Chrome in your Firefox user profile folder and add these two files
+   4. Restart Firefox
+*/
+
+#tabbrowser-tabs { --user-tab-rounding: 6px; }
+#titlebar {
+    background-image: linear-gradient(rgba(255,255,255,0.075),transparent);
+}
+#nav-bar {
+    background-image: linear-gradient(transparent,rgba(0,0,0,0.1)) !important;
+}
+#navigator-toolbox { border-bottom: 1px solid #889 !important; }
+
+.tab-background {
+    border-radius: var(--user-tab-rounding) var(--user-tab-rounding) 0 0 !important; /* Connected */
+    margin: 5px 0 0 !important; /* Connected */
+    outline: none !important;
+    background-clip: padding-box;
+}
+[selected] .tab-content {
+    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+}
+.tab-content:not([selected]) {
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.5);
+}
+#scrollbutton-up, #scrollbutton-down { /* 6/10/2021 */
+    border-top-width: 1px !important;
+    border-bottom-width: 0 !important;
+}
+tabbrowser-tab {
+    padding: 0 !important;
+}
+
+/* 1/16/2022 Tone down the Fx96 tab border with add-on themes in certain fallback situations */
+.tab-background:is([selected], [multiselected]):-moz-lwtheme {
+    --lwt-tabs-border-color: rgba(0, 0, 0, 0.5) !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.5) !important; /* , 0 3px 3px rgba(0,0,0,0.3) */
+    background-image: linear-gradient(rgba(255,255,255,0.5),transparent);
+    z-index: 100;
+    border: 1px solid rgba(0,0,0,0.25);
+    border-bottom: none;
+}
+.tab-content { z-index: 101; }
+.tab-background:not([selected], [multiselected]):-moz-lwtheme {
+    border-radius: 0 !important;
+    border-left: 1px solid rgba(255,255,255,0.1);
+}
+[brighttext="true"] .tab-background:is([selected], [multiselected]):-moz-lwtheme {
+    --lwt-tabs-border-color: rgba(255, 255, 255, 0.5) !important;
+    border-bottom-color: transparent !important;
+}
+tab[selected] + tab .tab-background {
+    border-left: none !important;
+}
+.tabbrowser-tab { padding: 0 !important; }
+
+/* Container color bar visibility */
+.tabbrowser-tab[usercontextid] > .tab-stack > .tab-background > .tab-context-line {
+    margin: 0 max(calc(var(--user-tab-rounding) - 3px), 0) !important;
+}
+
+#urlbar-background, #searchbar {
+    border: 1px solid rgba(0,0,0,0.2) !important;
+    border-bottom-color: rgba(0,0,0,0.1) !important;
+    border-top-color: rgba(0,0,0,0.3) !important;
+    background-clip: padding-box !important;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.1), 0 1px 0 rgba(255,255,255,0.5) !important;
+}
+
+.tabbrowser-tab:is([image], [pinned]) > .tab-stack > .tab-content[attention]:not([selected="true"]),
+.tabbrowser-tab > .tab-stack > .tab-content[pinned][titlechanged]:not([selected="true"]),
+#firefox-view-button[attention], .webextension-browser-action[attention="true"] {
+  background-position-y: bottom 5px !important;
+}
+
+.tabbrowser-tab[usercontextid] > .tab-stack > .tab-background > .tab-context-line {
+    opacity: 0.5;
+    position: absolute;
+    width: 3px; height: 3px;
+    bottom: 5px; left: 39%;
+    border-radius: 3px;
+}
+#TabsToolbar .toolbarbutton-icon, .tab-close-button:not([selected]) {
+    filter: drop-shadow(0 -1px 0 rgba(0,0,0,0.5));
+}
+#nav-bar toolbarbutton, [selected] .tab-close-button {
+    filter: drop-shadow(0 1px 0 rgba(255,255,255,0.5));
+}
+.tabbrowser-tab:hover > .tab-stack > .tab-background:not([selected], [multiselected]) {
+    background: linear-gradient(transparent,rgba(255,255,255,0.25)) !important;
+}
+:root:not([inFullscreen], [tabsintitlebar]) #nav-bar:not([tabs-hidden="true"]), #nav-bar:not([tabs-hidden="true"]):-moz-lwtheme {
+    /* box-shadow: 0 calc(-1 * var(--tabs-navbar-shadow-size)) 0 var(--lwt-tabs-border-color, rgba(0,0,0,.3)), inset 0 1px 0 rgba(255,255,255,0.2) !important; */
+}

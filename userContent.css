@@ -1,0 +1,50 @@
+/* =======
+   PREFERENCES
+   ======= */
+
+/* Alas there's no body class to identify other settings pages like the Extensions page… */
+
+#preferences-body .navigation {
+    background: #345;
+    color: rgba(255,255,255,0.75);
+    box-shadow: inset -5px 0 10px rgba(0,0,0,0.25);
+}
+#preferences-body .category-icon {
+    fill: rgba(255,255,255,0.5) !important;
+}
+#preferences-body .category, #preferences-body .sidebar-footer-link {
+    color: rgba(255,255,255,0.5) !important;
+    margin-inline-start: 0 !important;
+    padding: 0 2em !important;
+    border-radius: 0 !important;
+}
+#preferences-body .category[selected] {
+  color: rgba(255,255,255,0.75) !important;
+  background-color: rgba(255,255,255,0.1) !important;
+  border-style: solid none solid solid !important;
+  border-color: rgba(255,255,255,0.1) #E80 !important;
+  border-width: 1px 0 1px 4px !important;
+}
+#preferences-body .category[selected] .category-icon {
+    fill: rgba(255,255,255,0.75) !important;
+}
+#preferences-body #categories, #preferences-body .sidebar-footer-list {
+    padding: 0 !important;
+    margin-inline: 0 !important;
+}
+#preferences-body .sidebar-footer-link { border: none !important; }
+#preferences-body .sidebar-footer-link:hover {
+    background-color: var(--in-content-button-background-hover) !important;
+    color: #FFF !important;
+}
+
+search-textbox {
+    border: 1px solid rgba(0,0,0,0.3) !important;
+    border-bottom-color: rgba(0,0,0,0.2) !important;
+    border-top-color: rgba(0,0,0,0.4) !important;
+    background-clip: padding-box !important;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.2), 0 1px 0 rgba(255,255,255,0.5) !important;
+}
+#preferences-body .sticky-container, #preferences-body .main-content {
+    background-color: #F3F5F8 !important;
+}
