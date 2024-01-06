@@ -1,4 +1,5 @@
 /* REAL TABS IN FIREFOX
+   Revision 2
    Intended to be used with the Firefox Colors plugin (https://addons.mozilla.org/en-US/firefox/addon/firefox-color/)
    and this theme (https://color.firefox.com/?theme=XQAAAAIPAQAAAAAAAABBKYhm849SCia2CaaEGccwS-xMDPsquqWmWr6U_-J9Sk2zluBv0zSwMyKaAShHBfVaSjHe4S-QTZGGSWTDW3GJBaw52IuYFpk7GR12YCt7svbegS0W-lRKiZhfzG14OaRI3_gMy_gA0MF_nsUePY6mp_9pQVs8-Tr3k8GTtrj4zQB4czyVQlUKovwZ9JwdJMhwgAZzwiY6Y1j9h6cFOtjG8ahrCjP7213g)
    But of course the colors can be modified.
@@ -80,14 +81,21 @@ tab[selected] + tab .tab-background {
 #firefox-view-button[attention], .webextension-browser-action[attention="true"] {
   background-position-y: bottom 5px !important;
 }
-
+/* Facebook Container Indicator */
 .tabbrowser-tab[usercontextid] > .tab-stack > .tab-background > .tab-context-line {
-    opacity: 0.5;
     position: absolute;
-    width: 3px; height: 3px;
-    bottom: 5px; left: 39%;
-    border-radius: 3px;
+    width: 100%;
+    left: 0; bottom: 5px;
+    bottom: 12px;
+    background: none !important;
 }
+.tabbrowser-tab[usercontextid] > .tab-stack > .tab-background > .tab-context-line::after {
+    content: '~';
+    display: block;
+    margin: 0 auto;
+    color: rgba(0,0,0,0.75);
+}
+
 #TabsToolbar .toolbarbutton-icon, .tab-close-button:not([selected]) {
     filter: drop-shadow(0 -1px 0 rgba(0,0,0,0.5));
 }
@@ -99,4 +107,17 @@ tab[selected] + tab .tab-background {
 }
 :root:not([inFullscreen], [tabsintitlebar]) #nav-bar:not([tabs-hidden="true"]), #nav-bar:not([tabs-hidden="true"]):-moz-lwtheme {
     /* box-shadow: 0 calc(-1 * var(--tabs-navbar-shadow-size)) 0 var(--lwt-tabs-border-color, rgba(0,0,0,.3)), inset 0 1px 0 rgba(255,255,255,0.2) !important; */
+}
+
+/* Bookmarks toolbar */
+#PersonalToolbar {
+    background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.2)) !important;
+    border-top: 1px solid rgba(255,255,255,0.5);
+    text-shadow: 0 1px 0 rgba(255,255,255,0.4);
+}
+#nav-bar:has(+ #PersonalToolbar[collapsed="false"]) {
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+}
+#PersonalToolbar .toolbarbutton-icon {
+    filter: drop-shadow(0 1px 0 rgba(255,255,255,0.4));
 }
