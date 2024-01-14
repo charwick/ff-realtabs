@@ -1,5 +1,5 @@
 /* REAL TABS IN FIREFOX
-   Revision 2
+   Revision 4
    Intended to be used with the Firefox Colors plugin (https://addons.mozilla.org/en-US/firefox/addon/firefox-color/)
    and this theme (https://color.firefox.com/?theme=XQAAAAIPAQAAAAAAAABBKYhm849SCia2CaaEGccwS-xMDPsquqWmWr6U_-J9Sk2zluBv0zSwMyKaAShHBfVaSjHe4S-QTZGGSWTDW3GJBaw52IuYFpk7GR12YCt7svbegS0W-lRKiZhfzG14OaRI3_gMy_gA0MF_nsUePY6mp_9pQVs8-Tr3k8GTtrj4zQB4czyVQlUKovwZ9JwdJMhwgAZzwiY6Y1j9h6cFOtjG8ahrCjP7213g)
    But of course the colors can be modified.
@@ -131,4 +131,15 @@ tab[selected] + tab .tab-background {
 }
 #PersonalToolbar .toolbarbutton-icon {
     filter: drop-shadow(0 1px 0 rgba(255,255,255,0.4));
+}
+
+/* Menus */
+
+:is(menupopup, panel)[type="arrow"], .toolbar-menupopup { --panel-border-color: none !important; }
+:is(panelview .toolbarbutton-1, toolbarbutton.subviewbutton, .widget-overflow-list .toolbarbutton-1, .toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton):not([disabled]):hover, [_moz-menuactive] {
+    background: #649AF8 !important;
+    color: #FFF !important;
+}
+toolbarbutton:hover #fxa-menu-header-title {
+    color: #FFF !important;
 }
