@@ -1,5 +1,5 @@
 /* REAL TABS IN FIREFOX
-   Revision 6
+   Revision 7
    Intended to be used with the Firefox Colors plugin (https://addons.mozilla.org/en-US/firefox/addon/firefox-color/)
    and this theme (https://color.firefox.com/?theme=XQAAAAIPAQAAAAAAAABBKYhm849SCia2CaaEGccwS-xMDPsquqWmWr6U_-J9Sk2zluBv0zSwMyKaAShHBfVaSjHe4S-QTZGGSWTDW3GJBaw52IuYFpk7GR12YCt7svbegS0W-lRKiZhfzG14OaRI3_gMy_gA0MF_nsUePY6mp_9pQVs8-Tr3k8GTtrj4zQB4czyVQlUKovwZ9JwdJMhwgAZzwiY6Y1j9h6cFOtjG8ahrCjP7213g)
    But of course the colors can be modified.
@@ -12,10 +12,11 @@
 */
 
 :root {  --inactive-titlebar-opacity: 1 !important; } /* New in FF 122 */
-:-moz-window-inactive .tab-content { opacity: 0.6; }
+:-moz-window-inactive .tab-content { opacity: 0.7; }
 #TabsToolbar-customization-target { --user-tab-rounding: 6px; }
 #titlebar {
     background-image: linear-gradient(rgba(255,255,255,0.075),transparent);
+    z-index: 999;
 }
 #nav-bar {
     background-image: linear-gradient(transparent,rgba(0,0,0,0.1)) !important;
