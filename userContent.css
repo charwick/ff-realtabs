@@ -4,9 +4,9 @@
 
 /* Alas there's no body class to identify other settings pages like the Extensions page… */
 
-:root {  --in-content-page-background: #F3F5F8 !important; }
+:root:not(.private) {  --in-content-page-background: #F3F5F8 !important; }
 @media (prefers-color-scheme: dark) {
-    :root { --in-content-page-background: rgb(28,27,34) !important; }
+    :root:not(.private) { --in-content-page-background: rgb(28,27,34) !important; }
 }
 
 #preferences-body .navigation {
