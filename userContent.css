@@ -6,32 +6,32 @@
 
 :root:not(.private) {  --in-content-page-background: #F3F5F8 !important; }
 @media (prefers-color-scheme: dark) {
-    :root:not(.private) { --in-content-page-background: rgb(28,27,34) !important; }
+    :root:not(.private) { --in-content-page-background: rgb(28 27 34) !important; }
 }
 
 #preferences-body .navigation {
     background: #345;
-    color: rgba(255,255,255,0.75);
-    box-shadow: inset -5px 0 10px rgba(0,0,0,0.25);
+    color: rgb(255 255 255 / 75%);
+    box-shadow: inset -5px 0 10px rgb(0 0 0 / 25%);
 }
 #preferences-body .category-icon {
-    fill: rgba(255,255,255,0.5) !important;
+    fill: rgb(255 255 255 / 50%) !important;
 }
 #preferences-body .category, #preferences-body .sidebar-footer-link {
-    color: rgba(255,255,255,0.5) !important;
+    color: rgb(255 255 255 / 50%) !important;
     margin-inline-start: 0 !important;
     padding: 0 2em !important;
     border-radius: 0 !important;
 }
 #preferences-body .category[selected] {
-  color: rgba(255,255,255,0.75) !important;
-  background-color: rgba(255,255,255,0.1) !important;
+  color: rgb(255 255 255 / 75%) !important;
+  background-color: rgb(255 255 255 / 10% ) !important;
   border-style: solid none solid solid !important;
-  border-color: rgba(255,255,255,0.1) #E80 !important;
+  border-color: rgb(255 255 255 / 10%) #E80 !important;
   border-width: 1px 0 1px 4px !important;
 }
 #preferences-body .category[selected] .category-icon {
-    fill: rgba(255,255,255,0.75) !important;
+    fill: rgb(255 255 255 / 75%) !important;
 }
 #preferences-body #categories, #preferences-body .sidebar-footer-list {
     padding: 0 !important;
@@ -44,9 +44,9 @@
 }
 
 search-textbox {
-    border: 1px solid rgba(0,0,0,0.3) !important;
-    border-bottom-color: rgba(0,0,0,0.2) !important;
-    border-top-color: rgba(0,0,0,0.4) !important;
+    border: 1px solid rgb(0 0 0 / 30%) !important;
+    border-bottom-color: rgb(0 0 0 / 20%) !important;
+    border-top-color: rgb(0 0 0 / 40%) !important;
     background-clip: padding-box !important;
-    box-shadow: inset 0 1px 2px rgba(0,0,0,0.2), 0 1px 0 rgba(255,255,255,0.5) !important;
+    box-shadow: inset 0 1px 2px rgb(0 0 0 / 20%), 0 1px 0 rgb(255 255 255 / 50%) !important;
 }

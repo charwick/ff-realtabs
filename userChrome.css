@@ -17,15 +17,15 @@
 } 
 :-moz-window-inactive .tab-content { opacity: 0.7; }
 #titlebar {
-	background-image: linear-gradient(rgba(255,255,255,0.075),transparent);
+	background-image: linear-gradient(rgb(255 255 255 / 7.5%),transparent);
 	z-index: 999;
 }
 #nav-bar {
-	background-image: linear-gradient(transparent,rgba(0,0,0,0.1)) !important;
-	--toolbarbutton-hover-background: rgba(0,0,0,0.1) !important;
-	--toolbarbutton-active-background: rgba(0,0,0,0.2) !important;
+	background-image: linear-gradient(transparent,rgb(0 0 0 / 10%)) !important;
+	--toolbarbutton-hover-background: rgb(0 0 0 / 10%) !important;
+	--toolbarbutton-active-background: rgb(0 0 0 / 20%) !important;
 	border-top: none !important;
-	box-shadow: 0 -1px 0 rgba(0,0,0,0.2);
+	box-shadow: 0 -1px 0 rgb(0 0 0 / 20%);
 }
 #navigator-toolbox { border-bottom: 1px solid #889 !important; }
 
@@ -36,10 +36,10 @@
 	background-clip: padding-box;
 }
 [selected] .tab-content, [multiselected] .tab-content {
-	text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+	text-shadow: 0 1px 0 rgb(255 255 255 / 50%);
 }
 .tab-content:not([selected], [multiselected]) {
-	text-shadow: 0 -1px 0 rgba(0,0,0,0.5);
+	text-shadow: 0 -1px 0 rgb(0 0 0 / 50%);
 }
 #scrollbutton-up, #scrollbutton-down { /* 6/10/2021 */
 	border-top-width: 1px !important;
@@ -50,20 +50,20 @@ tabbrowser-tab {
 }
 
 .tab-background:is([selected], [multiselected]), #firefox-view-button[open] image {
-	--lwt-tabs-border-color: rgba(0, 0, 0, 0.5) !important;
-	box-shadow: inset 0 1px 0 rgba(255,255,255,0.5) !important; /* , 0 3px 3px rgba(0,0,0,0.3) */
-	background-image: linear-gradient(rgba(255,255,255,0.5),transparent);
+	--lwt-tabs-border-color: rgb(0 0 0 / 50%) !important;
+	box-shadow: inset 0 1px 0 rgb(255 255 255 / 50%) !important; /* , 0 3px 3px rgb(0 0 0 / 30%) */
+	background-image: linear-gradient(rgb(255 255 255 / 50%),transparent);
 	z-index: 100;
-	border: 1px solid rgba(0,0,0,0.25);
+	border: 1px solid rgb(0 0 0 / 25%);
 	border-bottom: none;
 }
 .tab-content { z-index: 101; }
 .tab-background:not([selected], [multiselected]) {
 	border-radius: 0 !important;
-	border-left: 1px solid rgba(255,255,255,0.1);
+	border-left: 1px solid rgb(255 255 255 / 10%);
 }
 [brighttext="true"] .tab-background:is([selected], [multiselected]) {
-	--lwt-tabs-border-color: rgba(255, 255, 255, 0.5) !important;
+	--lwt-tabs-border-color: rgb(255 255 255 / 50%) !important;
 	border-bottom-color: transparent !important;
 }
 tab[selected] + tab .tab-background {
@@ -84,7 +84,7 @@ tab[selected] + tab .tab-background {
 		bottom: -0.5px !important;
 		pointer-events: none !important;
 		clip-path: inset(0);
-		box-shadow: 0px -1px rgba(0,0,0,0.25) inset, 0 0 0 var(--tab-border-radius) var(--tab-selected-bgcolor) !important;
+		box-shadow: 0px -1px rgb(0 0 0 / 25%) inset, 0 0 0 var(--tab-border-radius) var(--tab-selected-bgcolor) !important;
 	}
 	&::before {
 		border-bottom-right-radius: var(--tab-border-radius) !important;
@@ -102,11 +102,11 @@ tab[selected] + tab .tab-background {
 }
 
 #urlbar-background, #searchbar, .findbar-textbox {
-	border: 1px solid rgba(0,0,0,0.2) !important;
-	border-bottom-color: rgba(0,0,0,0.1) !important;
-	border-top-color: rgba(0,0,0,0.3) !important;
+	border: 1px solid rgb(0 0 0 / 20%) !important;
+	border-bottom-color: rgb(0 0 0 / 10%) !important;
+	border-top-color: rgb(0 0 0 / 30%) !important;
 	background-clip: padding-box !important;
-	box-shadow: inset 0 1px 1px rgba(0,0,0,0.1), 0 1px 0 rgba(255,255,255,0.5) !important;
+	box-shadow: inset 0 1px 1px rgb(0 0 0 / 10%), 0 1px 0 rgb(255 255 255 / 50%) !important;
 }
 
 .tabbrowser-tab:is([image], [pinned]) > .tab-stack > .tab-content[attention]:not([selected="true"]),
@@ -126,29 +126,29 @@ tab[selected] + tab .tab-background {
 	content: '~';
 	display: block;
 	margin: 0 auto;
-	color: rgba(0,0,0,0.75);
+	color: rgb(0 0 0 / 75%);
 }
 
 #TabsToolbar .toolbarbutton-icon, .tab-close-button:not([selected]) {
-	filter: drop-shadow(0 -1px 0 rgba(0,0,0,0.5));
+	filter: drop-shadow(0 -1px 0 rgb(0 0 0 / 50%));
 }
 #nav-bar toolbarbutton, [selected] .tab-close-button {
-	filter: drop-shadow(0 1px 0 rgba(255,255,255,0.5));
+	filter: drop-shadow(0 1px 0 rgb(255 255 255 / 50%));
 }
 #nav-bar .toolbarbutton-1 {
 	&:not([disabled]) {
 		&:is([open], [checked], :hover:active) > :is(.toolbarbutton-icon, .toolbarbutton-text, .toolbarbutton-badge-stack) {
 			fill: #07D;
-			box-shadow: 0 1px 3px inset rgba(0,0,0,0.2);
-			background-image: radial-gradient(rgba(255,255,255,0.2),transparent);
+			box-shadow: 0 1px 3px inset rgb(0 0 0 / 20%);
+			background-image: radial-gradient(rgb(255 255 255 / 20%),transparent);
 		}
 	}
 }
 .tabbrowser-tab:hover > .tab-stack > .tab-background:not([selected], [multiselected]) {
-	background: linear-gradient(transparent,rgba(255,255,255,0.25)) !important;
+	background: linear-gradient(transparent,rgb(255 255 255 / 25%)) !important;
 }
 :root:not([inFullscreen], [tabsintitlebar]) #nav-bar:not([tabs-hidden="true"]), #nav-bar:not([tabs-hidden="true"]) {
-	/* box-shadow: 0 calc(-1 * var(--tabs-navbar-shadow-size)) 0 var(--lwt-tabs-border-color, rgba(0,0,0,.3)), inset 0 1px 0 rgba(255,255,255,0.2) !important; */
+	/* box-shadow: 0 calc(-1 * var(--tabs-navbar-shadow-size)) 0 var(--lwt-tabs-border-color, rgb(0 0 0 / 30%)), inset 0 1px 0 rgb(255 255 255 / 20%) !important; */
 }
 .browser-toolbar:not(.titlebar-color) { background-clip: border-box !important; } /* Fix bookmarks bar border on Windows */
 #TabsToolbar .toolbarbutton-1 { margin: 0 !important; } /* Fix Firefox View tab */
@@ -156,15 +156,15 @@ tab[selected] + tab .tab-background {
 
 /* Bookmarks toolbar */
 #PersonalToolbar {
-	background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.2)) !important;
-	border-top: 1px solid rgba(255,255,255,0.5);
-	text-shadow: 0 1px 0 rgba(255,255,255,0.4);
+	background-image: linear-gradient(rgb(0 0 0 / 10%), rgb(0 0 0 / 20%)) !important;
+	border-top: 1px solid rgb(255 255 255 / 50%);
+	text-shadow: 0 1px 0 rgb(255 255 255 / 40%);
 }
 #nav-bar:has(+ #PersonalToolbar[collapsed="false"]) {
-	border-bottom: 1px solid rgba(0,0,0,0.25);
+	border-bottom: 1px solid rgb(0 0 0 / 25%);
 }
 #PersonalToolbar .toolbarbutton-icon {
-	filter: drop-shadow(0 1px 0 rgba(255,255,255,0.4));
+	filter: drop-shadow(0 1px 0 rgb(255 255 255 / 40%));
 }
 
 /* Menus */
@@ -181,8 +181,8 @@ toolbarbutton:hover #fxa-menu-header-title {
 /* Find Bar */
 
 findbar {
-	border-top-color: rgba(255,255,255,0.6) !important;
-	background: var(--toolbar-bgcolor) linear-gradient(rgba(255,255,255,0.2),transparent, rgba(0,0,0,0.1)) !important;
-	box-shadow: 0 -1px 0 rgba(0,0,0,0.3);
+	border-top-color: rgb(255 255 255 / 60%) !important;
+	background: var(--toolbar-bgcolor) linear-gradient(rgb(255 255 255 / 20%),transparent, rgb(0 0 0 / 10%)) !important;
+	box-shadow: 0 -1px 0 rgb(0 0 0 / 30%);
 	contain: content;
 }
