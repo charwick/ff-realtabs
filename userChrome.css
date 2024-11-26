@@ -1,5 +1,5 @@
 /* REAL TABS IN FIREFOX
-	Revision 10
+	Revision 11
 	Intended to be used with the Firefox Colors plugin (https://addons.mozilla.org/en-US/firefox/addon/firefox-color/)
 	and this theme (https://color.firefox.com/?theme=XQAAAAIPAQAAAAAAAABBKYhm849SCia2CaaEGccwS-xMDPsquqWmWr6U_-J9Sk2zluBv0zSwMyKaAShHBfVaSjHe4S-QTZGGSWTDW3GJBaw52IuYFpk7GR12YCt7svbegS0W-lRKiZhfzG14OaRI3_gMy_gA0MF_nsUePY6mp_9pQVs8-Tr3k8GTtrj4zQB4czyVQlUKovwZ9JwdJMhwgAZzwiY6Y1j9h6cFOtjG8ahrCjP7213g)
 	But of course the colors can be modified.
@@ -12,7 +12,7 @@
 */
 
 :root {
-	--inactive-titlebar-opacity: 1 !important; /* New in FF 122 */
+	--inactive-titlebar-opacity: 1 !important;
 	--tab-border-radius: 6px !important;
 } 
 :-moz-window-inactive .tab-content { opacity: 0.7; }
@@ -58,6 +58,7 @@ tabbrowser-tab {
 	border-bottom: none;
 }
 .tab-content { z-index: 101; }
+.tab-content[pinned] { padding: 7.25px 10px !important; }
 .tab-background:not([selected], [multiselected]) {
 	border-radius: 0 !important;
 	border-left: 1px solid rgb(255 255 255 / 10%);
@@ -81,7 +82,7 @@ tab[selected] + tab .tab-background {
 		position: absolute !important;
 		width: var(--tab-border-radius) !important;
 		aspect-ratio: 1 / 1;
-		bottom: -0.5px !important;
+		bottom: 0 !important;
 		pointer-events: none !important;
 		clip-path: inset(0);
 		box-shadow: 0px -1px rgb(0 0 0 / 25%) inset, 0 0 0 var(--tab-border-radius) var(--tab-selected-bgcolor) !important;
@@ -129,6 +130,7 @@ tab[selected] + tab .tab-background {
 	color: rgb(0 0 0 / 75%);
 }
 
+#TabsToolbar { z-index: 999; }
 #TabsToolbar .toolbarbutton-icon, .tab-close-button:not([selected]) {
 	filter: drop-shadow(0 -1px 0 rgb(0 0 0 / 50%));
 }
