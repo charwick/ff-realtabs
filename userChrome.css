@@ -1,5 +1,5 @@
 /* REAL TABS IN FIREFOX
-	Revision 11
+	Revision 12
 	Intended to be used with the Firefox Colors plugin (https://addons.mozilla.org/en-US/firefox/addon/firefox-color/)
 	and this theme (https://color.firefox.com/?theme=XQAAAAIPAQAAAAAAAABBKYhm849SCia2CaaEGccwS-xMDPsquqWmWr6U_-J9Sk2zluBv0zSwMyKaAShHBfVaSjHe4S-QTZGGSWTDW3GJBaw52IuYFpk7GR12YCt7svbegS0W-lRKiZhfzG14OaRI3_gMy_gA0MF_nsUePY6mp_9pQVs8-Tr3k8GTtrj4zQB4czyVQlUKovwZ9JwdJMhwgAZzwiY6Y1j9h6cFOtjG8ahrCjP7213g)
 	But of course the colors can be modified.
@@ -102,7 +102,7 @@ tab[selected] + tab .tab-background {
 	margin: 0 max(calc(var(--tab-border-radius) - 3px), 0) !important;
 }
 
-#urlbar-background, #searchbar, .findbar-textbox {
+.urlbar-background, #searchbar, .findbar-textbox {
 	border: 1px solid rgb(0 0 0 / 20%) !important;
 	border-bottom-color: rgb(0 0 0 / 10%) !important;
 	border-top-color: rgb(0 0 0 / 30%) !important;
